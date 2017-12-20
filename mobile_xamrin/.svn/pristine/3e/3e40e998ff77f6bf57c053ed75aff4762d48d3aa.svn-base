@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_height="wrap_content"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    app:popupTheme="@style/ThemeOverlay.AppCompat.Dark"
+    android:background="@color/colorPrimary">
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <RelativeLayout
+            android:layout_marginRight="@dimen/margin_10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <TextView
+                android:id="@+id/txtvwMenu"
+                fontPath="fonts/OpenSans-Regular.ttf"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:text="@string/menu"
+                android:layout_centerVertical="true"
+                android:gravity="center"
+                android:drawablePadding="@dimen/margin_5dp"
+                android:drawableLeft="@drawable/back_arrow" />
+            <TextView
+                android:id="@+id/txtvwTitle"
+                fontPath="fonts/SFUIText-Medium.ttf"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_centerInParent="true"
+                android:text="@string/ApplicationName"
+                android:layout_centerHorizontal="true" />
+            <RelativeLayout
+                android:id="@+id/relNotification"
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:layout_alignParentRight="true">
+                <ImageView
+                    android:id="@+id/imgvw_notification"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/margin_8dp"
+                    android:layout_width="wrap_content"
+                    android:background="@null"
+                    android:src="@drawable/notification" />
+                <TextView
+                    android:id="@+id/txtvwNotificationBadge"
+                    android:layout_height="@dimen/margin_20dp"
+                    android:gravity="center"
+                    android:textSize="@dimen/margin_11dp"
+                    android:layout_width="@dimen/margin_20dp"
+                    android:visibility="gone"
+                    android:text="0"
+                    android:background="@drawable/rounded_red"
+                    android:textColor="@color/colorWhite" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </android.support.v7.widget.Toolbar>
+    <View
+        android:layout_height="@dimen/margin_1dp"
+        android:layout_below="@+id/txtvwTitle"
+        android:layout_width="match_parent"
+        android:background="@color/colorLine" />
+</LinearLayout>

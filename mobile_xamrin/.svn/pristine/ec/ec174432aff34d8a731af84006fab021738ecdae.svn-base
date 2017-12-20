@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/colorWhite">
+    <TextView
+        android:text="@string/ApplicationName"
+        fontPath="fonts/SFUIText-Medium.ttf"
+        android:textColor="@color/colorHeading"
+        android:textSize="@dimen/text_size_16"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:padding="@dimen/margin_30dp"
+        android:gravity="center"
+        android:background="@color/colorPrimary" />
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="@dimen/margin_17dp">
+        <TextView
+            android:text="Home"
+            fontPath="fonts/OpenSans-Regular.ttf"
+            android:textColor="@color/colorDetailSubHead"
+            android:textSize="@dimen/text_size_16"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:gravity="center_vertical"
+            android:id="@+id/txt_home"
+            android:padding="@dimen/margin_20dp"
+            android:background="@color/colorWhite" />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/margin_1dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorLine" />
+        <TextView
+            android:text="Contact Us"
+            fontPath="fonts/OpenSans-Regular.ttf"
+            android:textColor="@color/colorDetailSubHead"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="@dimen/text_size_16"
+            android:gravity="center_vertical"
+            android:id="@+id/txt_contact_us"
+            android:padding="@dimen/margin_20dp"
+            android:background="@color/colorWhite" />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/margin_1dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorLine" />
+        <TextView
+            android:text="Log Out"
+            fontPath="fonts/OpenSans-Regular.ttf"
+            android:textColor="@color/colorDetailSubHead"
+            android:layout_height="wrap_content"
+            android:layout_width="match_parent"
+            android:textSize="@dimen/text_size_16"
+            android:gravity="center_vertical"
+            android:id="@+id/txt_logout"
+            android:padding="@dimen/margin_20dp"
+            android:background="@color/colorWhite" />
+        <View
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/margin_1dp"
+            android:layout_gravity="center_horizontal"
+            android:background="@color/colorLine" />
+    </LinearLayout>
+</LinearLayout>

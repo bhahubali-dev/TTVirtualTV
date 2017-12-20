@@ -1,0 +1,549 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.4\build\Xamarin.Build.Download.props" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.4\build\Xamarin.Build.Download.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">iPhoneSimulator</Platform>
+    <ProjectGuid>{13DF0D92-7925-4AE2-805D-E4CADBAC29EE}</ProjectGuid>
+    <ProjectTypeGuids>{FEACFBD2-3405-455C-9665-78FE426C6842};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Exe</OutputType>
+    <RootNamespace>VirtualEvent.iOS</RootNamespace>
+    <AssemblyName>VirtualEvent.iOS</AssemblyName>
+    <IPhoneResourcePrefix>Resources</IPhoneResourcePrefix>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhoneSimulator' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <IOSDebuggerPort>45360</IOSDebuggerPort>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhone' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhone\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|iPhoneSimulator' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\iPhoneSimulator\Release</OutputPath>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchLink>None</MtouchLink>
+    <MtouchArch>i386, x86_64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|iPhone' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\iPhone\Debug</OutputPath>
+    <DefineConstants>DEBUG;ENABLE_TEST_CLOUD;</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodesignKey>iPhone Developer</CodesignKey>
+    <DeviceSpecificBuild>true</DeviceSpecificBuild>
+    <MtouchDebug>true</MtouchDebug>
+    <MtouchNoSymbolStrip>true</MtouchNoSymbolStrip>
+    <MtouchFastDev>true</MtouchFastDev>
+    <MtouchFloat32>true</MtouchFloat32>
+    <CodesignEntitlements>Entitlements.plist</CodesignEntitlements>
+    <MtouchLink>SdkOnly</MtouchLink>
+    <MtouchArch>ARMv7, ARM64</MtouchArch>
+    <MtouchHttpClientHandler>HttpClientHandler</MtouchHttpClientHandler>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="Xamarin.iOS" />
+    <Reference Include="MBProgressHUD">
+      <HintPath>..\packages\mbprogresshud.0.9.2.0\lib\Xamarin.iOS\MBProgressHUD.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Net">
+      <HintPath>..\packages\SQLite.Net.Core-PCL.3.1.1\lib\portable-win8+net45+wp8+wpa81+MonoAndroid1+MonoTouch1\SQLite.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="SQLite.Net.Platform.XamarinIOS.Unified">
+      <HintPath>..\packages\SQLite.Net-PCL.3.1.1\lib\Xamarin.iOS10\SQLite.Net.Platform.XamarinIOS.Unified.dll</HintPath>
+    </Reference>
+    <Reference Include="PerpetualEngine.SimpleStorage.iOS-Unified">
+      <HintPath>..\packages\SimpleStorage.1.4.2\lib\Xamarin.iOS10\PerpetualEngine.SimpleStorage.iOS-Unified.dll</HintPath>
+    </Reference>
+    <Reference Include="WebP.Touch">
+      <HintPath>..\packages\WebP.Touch.1.0.3\lib\Xamarin.iOS10\WebP.Touch.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.9\lib\Xamarin.iOS10\FFImageLoading.dll</HintPath>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform">
+      <HintPath>..\packages\Xamarin.FFImageLoading.2.2.9\lib\Xamarin.iOS10\FFImageLoading.Platform.dll</HintPath>
+    </Reference>
+    <Reference Include="Facebook">
+      <HintPath>..\packages\Xamarin.Facebook.iOS.4.19.0\lib\Xamarin.iOS10\Facebook.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.IO.Compression" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.10.0.2\lib\netstandard1.3\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Core">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.Core.3.4.6\lib\Xamarin.iOS10\Firebase.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.InstanceID">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.8.1\lib\Xamarin.iOS10\Firebase.InstanceID.dll</HintPath>
+    </Reference>
+    <Reference Include="Firebase.Analytics">
+      <HintPath>..\packages\Xamarin.Firebase.iOS.Analytics.3.6.0.2\lib\Xamarin.iOS10\Firebase.Analytics.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.Core">
+      <HintPath>..\packages\Xamarin.Google.iOS.Core.3.0.3.3\lib\Xamarin.iOS10\Google.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Google.SignIn">
+      <HintPath>..\packages\Xamarin.Google.iOS.SignIn.4.0.1.2\lib\Xamarin.iOS10\Google.SignIn.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin-Sidebar-Unified">
+      <HintPath>..\Components\SidebarNavigation-1.9\lib\ios-unified\Xamarin-Sidebar-Unified.dll</HintPath>
+    </Reference>
+    <Reference Include="Bandwidth.Net">
+      <HintPath>..\packages\Bandwidth.Net.3.0.4\lib\netstandard1.4\Bandwidth.Net.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.MediaManager.Abstractions">
+      <HintPath>..\packages\Plugin.MediaManager.0.4.0\lib\Xamarin.iOS10\Plugin.MediaManager.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Plugin.MediaManager">
+      <HintPath>..\packages\Plugin.MediaManager.0.4.0\lib\Xamarin.iOS10\Plugin.MediaManager.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.Windows.Core">
+      <HintPath>..\packages\PInvoke.Windows.Core.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.Windows.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.Kernel32">
+      <HintPath>..\packages\PInvoke.Kernel32.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.Kernel32.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.BCrypt">
+      <HintPath>..\packages\PInvoke.BCrypt.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.BCrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="PInvoke.NCrypt">
+      <HintPath>..\packages\PInvoke.NCrypt.0.3.2\lib\portable-net45+win+wpa81+MonoAndroid10+xamarinios10+MonoTouch10\PInvoke.NCrypt.dll</HintPath>
+    </Reference>
+    <Reference Include="Validation">
+      <HintPath>..\packages\Validation.2.2.8\lib\dotnet\Validation.dll</HintPath>
+    </Reference>
+    <Reference Include="PCLCrypto">
+      <HintPath>..\packages\PCLCrypto.2.0.147\lib\xamarinios10\PCLCrypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Xamarin.Auth">
+      <HintPath>..\packages\Xamarin.Auth.1.4.1.0\lib\Xamarin.iOS10\Xamarin.Auth.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Json" />
+    <Reference Include="Octane.Xam.VideoPlayer">
+      <HintPath>..\Components\video-player-1.2.3-trial\lib\ios-unified\Octane.Xam.VideoPlayer.dll</HintPath>
+    </Reference>
+    <Reference Include="Octane.Xam.VideoPlayer.iOS">
+      <HintPath>..\Components\video-player-1.2.3-trial\lib\ios-unified\Octane.Xam.VideoPlayer.iOS.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\VirtualEvent\VirtualEvent.csproj">
+      <Project>{E4EAAD4F-02A9-4759-9C60-272AFFDD6188}</Project>
+      <Name>VirtualEvent</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\LaunchImage.launchimage\Contents.json">
+      <InProject>false</InProject>
+    </ImageAsset>
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\58 - Settings.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\80 - Spotlight.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\76 - iPad %28%401x%29.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\152 - iPad.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\120 - iPhone.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\180 - iPhone 6 Plus.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\16.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\32.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\128.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\256.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\1024.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\512.png" />
+    <ImageAsset Include="Assets.xcassets\AppIcon.appiconset\48.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controller\SideMenu\Class\" />
+  </ItemGroup>
+  <ItemGroup>
+    <InterfaceDefinition Include="LaunchScreen.storyboard" />
+    <InterfaceDefinition Include="Main.storyboard" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Info.plist" />
+    <None Include="Entitlements.plist" />
+    <None Include="packages.config" />
+    <None Include="Fonts\Crimson\CrimsonText-Bold.ttf" />
+    <None Include="Fonts\Crimson\CrimsonText-BoldItalic.ttf" />
+    <None Include="Fonts\Crimson\CrimsonText-Italic.ttf" />
+    <None Include="Fonts\Crimson\CrimsonText-Roman.ttf" />
+    <None Include="Fonts\Crimson\CrimsonText-Semibold.ttf" />
+    <None Include="Fonts\Crimson\CrimsonText-SemiboldItalic.ttf" />
+    <None Include="Fonts\open-sans\Apache License.txt" />
+    <None Include="Fonts\open-sans\OpenSans-Bold.ttf" />
+    <None Include="Fonts\open-sans\OpenSans-BoldItalic.ttf" />
+    <None Include="Fonts\open-sans\OpenSans-ExtraBold.ttf" />
+    <None Include="Fonts\open-sans\OpenSans-ExtraBoldItalic.ttf" />
+    <None Include="Fonts\open-sans\OpenSans-Italic.ttf" />
+    <None Include="Fonts\open-sans\OpenSans-Light.ttf" />
+    <None Include="Fonts\open-sans\OpenSans-LightItalic.ttf" />
+    <None Include="Fonts\open-sans\OpenSans-Regular.ttf" />
+    <None Include="Fonts\open-sans\OpenSans-Semibold.ttf" />
+    <None Include="Fonts\open-sans\OpenSans-SemiboldItalic.ttf" />
+    <None Include="Fonts\raleway\Raleway-Black.ttf" />
+    <None Include="Fonts\raleway\Raleway-BlackItalic.ttf" />
+    <None Include="Fonts\raleway\Raleway-Bold.ttf" />
+    <None Include="Fonts\raleway\Raleway-BoldItalic.ttf" />
+    <None Include="Fonts\raleway\Raleway-ExtraBold.ttf" />
+    <None Include="Fonts\raleway\Raleway-ExtraBoldItalic.ttf" />
+    <None Include="Fonts\raleway\Raleway-ExtraLight.ttf" />
+    <None Include="Fonts\raleway\Raleway-ExtraLightItalic.ttf" />
+    <None Include="Fonts\raleway\Raleway-Italic.ttf" />
+    <None Include="Fonts\raleway\Raleway-Light.ttf" />
+    <None Include="Fonts\raleway\Raleway-LightItalic.ttf" />
+    <None Include="Fonts\raleway\Raleway-Medium.ttf" />
+    <None Include="Fonts\raleway\Raleway-MediumItalic.ttf" />
+    <None Include="Fonts\raleway\Raleway-Regular.ttf" />
+    <None Include="Fonts\raleway\Raleway-SemiBold.ttf" />
+    <None Include="Fonts\raleway\Raleway-SemiBoldItalic.ttf" />
+    <None Include="Fonts\raleway\Raleway-Thin.ttf" />
+    <None Include="Fonts\raleway\Raleway-ThinItalic.ttf" />
+    <None Include="Fonts\raleway\SIL Open Font License.txt" />
+    <None Include="Fonts\SFUIText-Light.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="Fonts\SFUIText-Medium.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="scripts\jwplayer.js" />
+    <None Include="scripts\jwplayer.html5.js" />
+    <None Include="scripts\jwplayer.flash.swf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Main.cs" />
+    <Compile Include="AppDelegate.cs" />
+    <Compile Include="Controller\Authentication\LoginViewController.cs">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Compile>
+    <Compile Include="Controller\Authentication\LoginViewController.designer.cs">
+      <DependentUpon>LoginViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\SideMenu\Controller\RootViewController.cs" />
+    <Compile Include="Controller\SideMenu\Controller\NavController.cs" />
+    <Compile Include="Controller\SideMenu\Controller\BaseViewController.cs" />
+    <Compile Include="Helper\AppConstant.cs" />
+    <Compile Include="Helper\CommonUtils.cs" />
+    <Compile Include="Controller\Home\Controller\HomeViewCtr.cs" />
+    <Compile Include="Controller\Home\Controller\HomeViewCtr.designer.cs">
+      <DependentUpon>HomeViewCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Helper\LoadingOverlay.cs" />
+    <Compile Include="Helper\Reachability.cs" />
+    <Compile Include="Helper\StorageUtils.cs" />
+    <Compile Include="Controller\Notification\Controller\NotificationViewCtr.cs" />
+    <Compile Include="Controller\Notification\Controller\NotificationViewCtr.designer.cs">
+      <DependentUpon>NotificationViewCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Notification\class\NotificationTableDataSource.cs" />
+    <Compile Include="Controller\Home\Class\EventTableDataSource.cs" />
+    <Compile Include="Controller\Home\Class\EnrolledEventTableDataSource.cs" />
+    <Compile Include="Controller\Home\Controller\EnrolledDetailViewCtr.cs" />
+    <Compile Include="Controller\Home\Controller\EnrolledDetailViewCtr.designer.cs">
+      <DependentUpon>EnrolledDetailViewCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Home\Controller\EventDetailViewCtr.cs" />
+    <Compile Include="Controller\Home\Controller\EventDetailViewCtr.designer.cs">
+      <DependentUpon>EventDetailViewCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Home\Class\EventDetailTableDataSource.cs" />
+    <Compile Include="Controller\Home\Class\EnrolledEventDetailTableDataSource.cs" />
+    <Compile Include="ContactUsViewController.cs" />
+    <Compile Include="ContactUsViewController.designer.cs">
+      <DependentUpon>ContactUsViewController.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Controller\Home\Class\EnrolledDetailTableDateDelegate.cs" />
+    <Compile Include="Controller\Home\Class\EventDetailTableViewDelegate.cs" />
+    <Compile Include="Controller\SideMenu\Controller\SideMenuViewCtr.cs" />
+    <Compile Include="Controller\SideMenu\Controller\SideMenuViewCtr.designer.cs">
+      <DependentUpon>SideMenuViewCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MediaPlayerViewCtr.cs" />
+    <Compile Include="MediaPlayerViewCtr.designer.cs">
+      <DependentUpon>MediaPlayerViewCtr.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI.cs" />
+    <Compile Include="UI.designer.cs">
+      <DependentUpon>UI.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <XamarinComponentReference Include="mbprogresshud">
+      <Version>0.9.2.0</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="googleiossignin">
+      <Version>4.0.1.2</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="SidebarNavigation">
+      <Version>1.9</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+    <XamarinComponentReference Include="video-player-trial">
+      <Version>1.2.3</Version>
+      <Visible>False</Visible>
+    </XamarinComponentReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\image1.jpg" />
+    <BundleResource Include="Resources\Crimson\CrimsonText-Bold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\Crimson\CrimsonText-BoldItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\Crimson\CrimsonText-Italic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\Crimson\CrimsonText-Roman.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\Crimson\CrimsonText-Semibold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\Crimson\CrimsonText-SemiboldItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\open-sans\Apache License.txt" />
+    <BundleResource Include="Resources\open-sans\OpenSans-Bold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\open-sans\OpenSans-BoldItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\open-sans\OpenSans-ExtraBold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\open-sans\OpenSans-ExtraBoldItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\open-sans\OpenSans-Italic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\open-sans\OpenSans-Light.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\open-sans\OpenSans-LightItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\open-sans\OpenSans-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\open-sans\OpenSans-Semibold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\open-sans\OpenSans-SemiboldItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-Black.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-BlackItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-Bold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-BoldItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-ExtraBold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-ExtraBoldItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-ExtraLight.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-ExtraLightItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-Italic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-Light.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-LightItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-Medium.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-MediumItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-SemiBold.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-SemiBoldItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-Thin.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\Raleway-ThinItalic.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\raleway\SIL Open Font License.txt" />
+    <BundleResource Include="Resources\SFUIText-Light.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\SFUIText-Medium.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\facebook%402x.png" />
+    <BundleResource Include="Resources\facebook%403x.png" />
+    <BundleResource Include="Resources\google-plus%402x.png" />
+    <BundleResource Include="Resources\google-plus%403x.png" />
+    <BundleResource Include="Resources\SFUIDisplay-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Fonts\SFUIDisplay-Regular.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </BundleResource>
+    <BundleResource Include="Resources\btn_pause_active.png" />
+    <BundleResource Include="Resources\btn_pause_active%402x.png" />
+    <BundleResource Include="Resources\btn_pause_active%403x.png" />
+    <BundleResource Include="Resources\btn_pause_static.png" />
+    <BundleResource Include="Resources\btn_pause_static%402x.png" />
+    <BundleResource Include="Resources\btn_pause_static%403x.png" />
+    <BundleResource Include="Resources\btn_play_active.png" />
+    <BundleResource Include="Resources\btn_play_active%402x.png" />
+    <BundleResource Include="Resources\btn_play_active%403x.png" />
+    <BundleResource Include="Resources\btn_play_static.png" />
+    <BundleResource Include="Resources\btn_play_static%402x.png" />
+    <BundleResource Include="Resources\btn_play_static%403x.png" />
+    <BundleResource Include="Resources\icon_next_inactive 2.png" />
+    <BundleResource Include="Resources\icon_next_inactive 2%402x.png" />
+    <BundleResource Include="Resources\icon_next_inactive 2%403x.png" />
+    <BundleResource Include="Resources\icon_next_inactive.png" />
+    <BundleResource Include="Resources\icon_next_inactive%402x.png" />
+    <BundleResource Include="Resources\icon_next_inactive%403x.png" />
+    <BundleResource Include="Resources\icon_next_static.png" />
+    <BundleResource Include="Resources\icon_next_static%402x.png" />
+    <BundleResource Include="Resources\icon_next_static%403x.png" />
+    <BundleResource Include="Resources\icon_prev_active.png" />
+    <BundleResource Include="Resources\icon_prev_active%402x.png" />
+    <BundleResource Include="Resources\icon_prev_active%403x.png" />
+    <BundleResource Include="Resources\icon_prev_inactive.png" />
+    <BundleResource Include="Resources\icon_prev_inactive%402x.png" />
+    <BundleResource Include="Resources\icon_prev_inactive%403x.png" />
+    <BundleResource Include="Resources\icon_prev_static.png" />
+    <BundleResource Include="Resources\icon_prev_static%402x.png" />
+    <BundleResource Include="Resources\icon_prev_static%403x.png" />
+    <BundleResource Include="Resources\icon_repeat_active.png" />
+    <BundleResource Include="Resources\icon_repeat_active%402x.png" />
+    <BundleResource Include="Resources\icon_repeat_active%403x.png" />
+    <BundleResource Include="Resources\icon_repeat_one_active.png" />
+    <BundleResource Include="Resources\icon_repeat_one_active%402x.png" />
+    <BundleResource Include="Resources\icon_repeat_one_active%403x.png" />
+    <BundleResource Include="Resources\icon_repeat_static.png" />
+    <BundleResource Include="Resources\icon_repeat_static%402x.png" />
+    <BundleResource Include="Resources\icon_repeat_static%403x.png" />
+    <BundleResource Include="Resources\icon_shuffle_active.png" />
+    <BundleResource Include="Resources\icon_shuffle_active%402x.png" />
+    <BundleResource Include="Resources\icon_shuffle_active%403x.png" />
+    <BundleResource Include="Resources\icon_shuffle_static.png" />
+    <BundleResource Include="Resources\icon_shuffle_static%402x.png" />
+    <BundleResource Include="Resources\icon_shuffle_static%403x.png" />
+    <BundleResource Include="Resources\loading_spinner.png" />
+    <BundleResource Include="Resources\loading_spinner%402x.png" />
+    <BundleResource Include="Resources\loading_spinner%403x.png" />
+    <BundleResource Include="GoogleService-Info.plist" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\imagesflower2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\ImageFlower.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\list_placeholder%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notification%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\notification%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\virtual_event_icon%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\virtual_event_icon%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Back%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\Back%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\detail_placeholder%402x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\detail_placeholder%403x.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\list_placeholder%402x.png" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.Core.3.4.6\build\Xamarin.Firebase.iOS.Core.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.Core.3.4.6\build\Xamarin.Firebase.iOS.Core.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.8.1\build\Xamarin.Firebase.iOS.InstanceID.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.InstanceID.1.0.8.1\build\Xamarin.Firebase.iOS.InstanceID.targets')" />
+  <Import Project="..\packages\Xamarin.Firebase.iOS.Analytics.3.6.0.2\build\Xamarin.Firebase.iOS.Analytics.targets" Condition="Exists('..\packages\Xamarin.Firebase.iOS.Analytics.3.6.0.2\build\Xamarin.Firebase.iOS.Analytics.targets')" />
+  <Import Project="..\packages\Xamarin.Google.iOS.Core.3.0.3.3\build\Xamarin.Google.iOS.Core.targets" Condition="Exists('..\packages\Xamarin.Google.iOS.Core.3.0.3.3\build\Xamarin.Google.iOS.Core.targets')" />
+  <Import Project="..\packages\Xamarin.Google.iOS.SignIn.4.0.1.2\build\Xamarin.Google.iOS.SignIn.targets" Condition="Exists('..\packages\Xamarin.Google.iOS.SignIn.4.0.1.2\build\Xamarin.Google.iOS.SignIn.targets')" />
+  <Import Project="..\packages\Xamarin.Build.Download.0.4.4\build\Xamarin.Build.Download.targets" Condition="Exists('..\packages\Xamarin.Build.Download.0.4.4\build\Xamarin.Build.Download.targets')" />
+</Project>

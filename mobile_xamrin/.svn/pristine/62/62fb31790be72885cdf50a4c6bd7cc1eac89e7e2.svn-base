@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<resources>
+  <color name="colorHint">#a7a7a7</color>
+  <color name="colorWhite">#ffffff</color>
+  <color name="colorBorder">#941a21</color>
+  <color name="colorHeading">#303030</color>
+  <color name="colorDetailHeading">#404040</color>
+  <color name="colorDetailSubHead" >#515151</color>
+  <color name="colorLine">#d3d3d3</color>
+  <color name="colorMaroon">#941a21</color>
+	<color name="colorPrimary">#eae8e8</color>
+	<color name="colorLightBlack">#404040</color>
+
+	<color name="colorLightGrey">#a7a7a7</color>
+  <color name="colorGreyBackground">#f1f1f1</color>
+  <color name="colorGreen">#4a8c0e</color>
+  <color name="colorFacebook">#475993</color>
+	<color name="colorGoogle">#dc4e41</color>
+
+  <color name="colordivider">#979797</color>
+</resources>

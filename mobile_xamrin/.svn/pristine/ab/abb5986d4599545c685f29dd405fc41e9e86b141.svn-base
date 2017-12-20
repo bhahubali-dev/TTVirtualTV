@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="Hello">Hello World, Click Me!</string>
+    <string name="ApplicationName">Virtual Event</string>
+	<string name="virtualevent">Virtual Event</string>
+  	<string name="drawer_open">Open navigation drawer</string>
+
+  	<string name="drawer_close">Close navigation drawer</string>
+	<string name="network_error">Please connect to working internet connection.</string>
+	<string name="menu">Menu</string>
+	<string name="blank"> </string>
+
+	<string name="viewEvent">CLICK HERE TO VIEW EVENT</string>
+	<string name="approval">Approval Pending</string>
+	<string name="question">My Question</string>
+  <string name="facebook_app_id">822879767861537</string>
+  <string name="play_services_error_fmt">Google Play Services Error: {0}</string>
+  <string name="orsign">or Sign in with</string>
+	<string name="pos">pos</string>
+	<string name="msgLogOut">Are you sure you want to logout?</string>
+	<string name="popup_ok">Yes</string>
+	<string name="popup_cancel">No</string>
+
+</resources>

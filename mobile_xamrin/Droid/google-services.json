@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "678528929935",
+    "firebase_url": "https://virtualevent-c9521.firebaseio.com",
+    "project_id": "virtualevent-c9521",
+    "storage_bucket": "virtualevent-c9521.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:678528929935:android:27cbc65fb29dbd54",
+        "android_client_info": {
+          "package_name": "com.techahead.virtualevent"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "678528929935-jit0a1e0de8r613egc686lojv003fcfd.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAyCf3_JDWOhJERwLlK4Xhp8LMMPHQ-Scs"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "678528929935-jit0a1e0de8r613egc686lojv003fcfd.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

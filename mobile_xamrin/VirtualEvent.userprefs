@@ -1,0 +1,25 @@
+﻿<Properties StartupConfiguration="{79786EC2-6B3B-472D-AB97-79990B5AA3E5}|Default">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Droid/Controllers/Activities/LoginActivity.cs">
+    <Files>
+      <File FileName="Droid/Controllers/Adapters/NotificationAdatper.cs" Line="17" Column="21" />
+      <File FileName="Droid/Controllers/Activities/EventDetailActivity.cs" Line="65" Column="1" />
+      <File FileName="Droid/Controllers/Activities/SplashActivity.cs" Line="52" Column="1" />
+      <File FileName="Droid/Controllers/Activities/MainActivity.cs" Line="19" Column="15" />
+      <File FileName="Droid/Controllers/PushNotification/MyFirebaseMessagingService.cs" Line="1" Column="14" />
+      <File FileName="Droid/Controllers/Activities/LoginActivity.cs" Line="1" Column="1" />
+    </Files>
+  </MonoDevelop.Ide.Workbench>
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.DebuggingService.Breakpoints>
+    <BreakpointStore>
+      <Breakpoint file="/Users/poojasingh/Documents/TA_PROJECTS/Virtual_Events_Projects/SVN24/mobile_xamrin/VirtualEvent/ServiceLayer/Notification/INotification.cs" relfile="VirtualEvent/ServiceLayer/Notification/INotification.cs" line="8" column="30" />
+      <Breakpoint file="/Users/poojasingh/Documents/TA_PROJECTS/Virtual_Events_Projects/SVN24/mobile_xamrin/VirtualEvent/ServiceLayer/Authentication/LoginService.cs" relfile="VirtualEvent/ServiceLayer/Authentication/LoginService.cs" line="45" column="1" />
+      <Breakpoint file="/Users/poojasingh/Documents/TA_PROJECTS/Virtual_Events_Projects/SVN24/mobile_xamrin/VirtualEvent/ServiceLayer/Event/IEventListService.cs" relfile="VirtualEvent/ServiceLayer/Event/IEventListService.cs" line="10" column="29" />
+      <Breakpoint file="/Users/poojasingh/Documents/TA_PROJECTS/Virtual_Events_Projects/SVN24/mobile_xamrin/iOS/Controller/SideMenu/Controller/SideMenuViewCtr.cs" relfile="iOS/Controller/SideMenu/Controller/SideMenuViewCtr.cs" line="33" column="1" />
+    </BreakpointStore>
+  </MonoDevelop.Ide.DebuggingService.Breakpoints>
+  <MonoDevelop.Ide.DebuggingService.PinnedWatches />
+  <MonoDevelop.Ide.ItemProperties.VirtualEvent.Droid AndroidDesignerPreferredDevice="Nexus 4" PreferredExecutionTarget="Android.Nexus_5X_API_25_2" />
+  <MultiItemStartupConfigurations />
+  <MonoDevelop.Ide.ItemProperties.JWPlayer PreferredExecutionTarget="Android.Nexus_5X_API_25_2" />
+</Properties>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:id="@+id/main_layt"
+    android:paddingTop="@dimen/margin_10dp"
+    android:background="@android:color/white"
+    android:layout_height="wrap_content"
+    android:paddingLeft="@dimen/margin_10dp"
+    android:orientation="vertical">
+    <TextView
+        android:id="@+id/txtvwNotification"
+        android:layout_height="wrap_content"
+        android:textColor="@color/colorDetailHeading"
+        android:layout_width="wrap_content"
+        android:layout_marginRight="@dimen/margin_10dp"
+        fontPath="fonts/OpenSans-Regular.ttf"
+        android:text="Your question has been appoved"
+        android:textSize="@dimen/text_size_15" />
+    <TextView
+        android:id="@+id/txtvwEventName"
+        android:layout_marginTop="@dimen/margin_6dp"
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:text="Event Name"
+        android:layout_marginRight="@dimen/margin_10dp"
+        android:textColor="@color/colorDetailSubHead"
+        fontPath="fonts/OpenSans-Regular.ttf"
+        android:textSize="@dimen/text_size_12" />
+    <LinearLayout
+        android:layout_height="wrap_content"
+        android:layout_width="wrap_content"
+        android:orientation="horizontal">
+        <TextView
+            android:layout_marginTop="@dimen/margin_6dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Date: "
+            fontPath="fonts/OpenSans-Regular.ttf"
+            android:textColor="@color/colorDetailSubHead"
+            android:textSize="@dimen/text_size_12" />
+        <TextView
+            android:id="@+id/txtvwDate"
+            android:layout_marginTop="@dimen/margin_6dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Dec 10, 2017"
+            fontPath="fonts/OpenSans-Regular.ttf"
+            android:textColor="@color/colorDetailSubHead"
+            android:layout_marginLeft="@dimen/margin_5dp"
+            android:textSize="@dimen/text_size_12" />
+        <TextView
+            android:layout_marginTop="@dimen/margin_6dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:text="Time: "
+            fontPath="fonts/OpenSans-Regular.ttf"
+            android:textColor="@color/colorDetailSubHead"
+            android:layout_marginLeft="@dimen/margin_20dp"
+            android:textSize="@dimen/text_size_12" />
+        <TextView
+            android:id="@+id/txtvwTime"
+            android:layout_marginTop="@dimen/margin_6dp"
+            android:layout_height="wrap_content"
+            android:layout_width="wrap_content"
+            android:visibility="visible"
+            android:text="02:34 PM"
+            fontPath="fonts/OpenSans-Regular.ttf"
+            android:textColor="@color/colorDetailSubHead"
+            android:layout_marginLeft="@dimen/margin_5dp"
+            android:textSize="@dimen/text_size_12" />
+    </LinearLayout>
+    <View
+        android:layout_marginTop="@dimen/margin_10dp"
+        android:layout_height="@dimen/margin_1dp"
+        android:layout_width="match_parent"
+        android:background="@android:color/black" />
+</LinearLayout>

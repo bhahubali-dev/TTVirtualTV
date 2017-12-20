@@ -1,0 +1,6 @@
+﻿<?xml version="1.0" encoding="utf8"?> <selector xmlns:android="http://schemas.android.com/apk/res/android"> 
+<!-- When selected, use grey --> 
+<item android:drawable="@drawable/tabselectedcolor" />
+	<!-- When not selected, use white -->
+	<item android:drawable="@drawable/tabunselcolor" android:state_selected="true"/>
+</selector>
